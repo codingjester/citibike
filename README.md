@@ -1,6 +1,6 @@
 # Citibike
 
-TODO: Write a gem description
+Gets information about Citibike. Stations, helmets and branches are available.
 
 ## Installation
 
@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Using the gem is fairly easy.
+```
+require 'citibike'
+
+>>> Citibike.new.stations
+
+>>> Citibike.new.helmets
+
+>>> Citibike.new.branches
+```
 
 ## Contributing
 
