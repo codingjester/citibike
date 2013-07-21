@@ -13,9 +13,11 @@ module Citibike
         :url => "http://#{host}/"
       }
       Faraday.new("http://#{host}/", default_options.merge(options)) do |builder|
-        builder.use Faraday::Request::UrlEncoded
-        builder.use FaradayMiddleware::ParseJson, :content_type => 'application/json'
-        builder.use Faraday::Adapter::NetHttp
+        builder.request :json
+
+        builder.response :json, :content_type => /\bjson$/
+        builder.use FaradayMiddleware::Mashify
+        builder.adapter Faraday.default_adapter
       end
     end
   end

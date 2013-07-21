@@ -1,5 +1,7 @@
 require 'citibike/connection'
 require 'citibike/stations'
+require 'citibike/helmets'
+require 'citibike/branches'
 require 'citibike/request'
 
 module Citibike
@@ -12,6 +14,8 @@ module Citibike
     end
 
     include Citibike::Stations
+    include Citibike::Helmets
+    include Citibike::Branches
     include Citibike::Connection
     include Citibike::Request
 
